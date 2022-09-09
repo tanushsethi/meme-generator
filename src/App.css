@@ -24,6 +24,26 @@
     padding: 50px;
 }
 
+.inputCon{
+    display: flex;
+    justify-content: space-between;
+    height: 10vh;
+    width: 100%;
+    margin-bottom: 20px;
+}
+
+.inputCon input{
+    width: 49%;
+    border: 1px solid gray;
+    text-indent: 20px;
+    font-size: 20px;
+    color: rgb(58, 58, 58);
+}
+
+.inputCon input:focus{
+    outline: none;
+}
+
 .buttonCon{
     height: 10vh;
     width: 100%;
