@@ -1,13 +1,18 @@
 import React from "react";
 import memesData from "../data";
 
+
 function Main(){
     const [memeData , setMeme] = React.useState({
         url: "https://i.imgflip.com/24y43o.jpg",
         topText: "",
         bottomText: ""
     });
-    const [dataObj, setAllMemeImages] = React.useState(memesData)
+    const [inputData, setInputData] = React.useState({
+        topText: "",
+        bottomText: ""
+    })
+    const [dataObj] = React.useState(memesData)
     var {data: {memes}} = dataObj;
     function generate(){
         var rand = Math.floor(Math.random() * memes.length);
@@ -18,18 +23,40 @@ function Main(){
             }
         })
     }
+    console.log(inputData);
+
+    function handleChange(event){
+        setInputData((current)=>{
+            return {
+                ...current,
+                [event.target.name]: event.target.value
+            }
+        });
+    }
 
     return(
         <div className="main">
             <div className="inputCon">
-                <input className="input" type="text" placeholder="Top Text"/>
-                <input className="input" type="text" placeholder="Bottom Text"/>
+                <input className="input" 
+                    type="text" 
+                    placeholder="Top Text"
+                    onChange={handleChange}
+                    name="topText"
+                />
+                <input className="input" 
+                    type="text" 
+                    placeholder="Bottom Text"
+                    onChange={handleChange}
+                    name="bottomText"
+                />
             </div>
             <div className="buttonCon">
                 <button onClick={generate}>Get a new meme image! </button>
             </div>
             <div className="imgCon">
+                <h1 className="upperText"></h1>
                 <img src={memeData.url} alt="" />
+                <h1 className="bottomText"></h1>
             </div>
         </div>
     );
