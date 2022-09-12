@@ -42,21 +42,23 @@ function Main(){
                     placeholder="Top Text"
                     onChange={handleChange}
                     name="topText"
+                    value={inputData.topText}
                 />
                 <input className="input" 
                     type="text" 
                     placeholder="Bottom Text"
                     onChange={handleChange}
                     name="bottomText"
+                    value={inputData.bottomText}
                 />
             </div>
             <div className="buttonCon">
                 <button onClick={generate}>Get a new meme image! </button>
             </div>
             <div className="imgCon">
-                <h1 className="upperText"></h1>
+                <h1 className="topText">{inputData.topText}</h1>
                 <img src={memeData.url} alt="" />
-                <h1 className="bottomText"></h1>
+                <h1 className="bottomText">{inputData.bottomText}</h1>
             </div>
         </div>
     );
