@@ -1,6 +1,4 @@
 import React from "react";
-import memesData from "../data";
-
 
 function Main(){
     const [memeData , setMeme] = React.useState({
@@ -12,8 +10,14 @@ function Main(){
         topText: "",
         bottomText: ""
     })
-    const [dataObj] = React.useState(memesData)
-    var {data: {memes}} = dataObj;
+    const [memes, setAllMemes] = React.useState([])
+
+    React.useEffect(() => {
+        fetch("https://api.imgflip.com/get_memes")
+            .then(res => res.json())
+            .then(data => setAllMemes(data.data.memes))
+    }, [])
+
     function generate(){
         var rand = Math.floor(Math.random() * memes.length);
         setMeme(function(current){
