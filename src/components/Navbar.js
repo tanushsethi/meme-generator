@@ -5,10 +5,10 @@ function Navbar() {
         <div className="navbar">
             <div className="logo">
                 <img className="logoImg" src="" alt=""/>
-                <span className="logoText">MemeGenerator</span>
+                <span className="logoText">Memefy</span>
             </div>
             <div className="heading">
-                React Mini Project
+                Make Memes Online
             </div>
         </div>
     );

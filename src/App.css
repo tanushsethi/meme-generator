@@ -9,7 +9,7 @@
 .navbar{
     height: 10vh;
     width: 100%;
-    background-color: rgb(255, 75, 75);
+    background-color: rgb(75, 180, 255);
     display: flex;
     align-items: center;
     padding: 0px 50px;
@@ -54,7 +54,7 @@
     height: 100%;
     width: 100%;
     border: none;
-    background-color: rgb(255, 75, 75);
+    background-color: rgb(75, 180, 255);
     color: white;
     border-radius: 3px;
     font-size: 20px;
